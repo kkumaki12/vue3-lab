@@ -59,7 +59,9 @@ const items = ref<Items[]>([
     <template
       v-for="item in items"
       :key="item.id">
-      <div class="item">
+      <div
+        v-if="!item.soldOut"
+        class="item">
         <div class="thumbnail">
           <img
             :src="item.image"
