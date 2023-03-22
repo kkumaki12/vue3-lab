@@ -69,7 +69,9 @@ function pricePrefix(price: number) {
       :key="item.id">
       <div
         v-if="!item.soldOut"
-        class="item">
+        class="item"
+        :class="{ 'selected-item': item.selected }"
+        @click="item.selected = !item.selected">
         <div class="thumbnail">
           <img
             :src="item.image"
